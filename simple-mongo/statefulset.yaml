@@ -11,7 +11,7 @@ spec:
   clusterIP: None
   selector:
     role: mongo
----------------------------
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
