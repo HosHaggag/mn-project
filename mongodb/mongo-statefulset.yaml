@@ -66,14 +66,18 @@ spec:
                   key: mongodb-root-password
             - name: MONGODB_DATABASE
               value: "admin"
+       volumes:
+        - name: my-pvc
+          persistentVolumeClaim:
+            claimName: my-claim
 
-  volumeClaimTemplates:
-  - metadata:
-      name: mongo-persistent-storage
-      annotations:
-        volume.beta.kubernetes.io/storage-class: "fast"
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
+  # volumeClaimTemplates:
+  # - metadata:
+  #     name: mongo-persistent-storage
+  #     annotations:
+  #       volume.beta.kubernetes.io/storage-class: "fast"
+  #   spec:
+  #     accessModes: [ "ReadWriteOnce" ]
+  #     resources:
+  #       requests:
+  #         storage: 1Gi
