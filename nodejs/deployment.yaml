@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mynodejs-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: mynodejs
@@ -18,13 +18,10 @@ spec:
           image: haggagdev/mn-node:1.0.0
           env:
             - name: DBuser
-              value: "admin"
+              value: "demoadmin"
             - name: DBpass
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-key
-                  key: mongodb-root-password
+              value: "demopwd"
             - name: DBhosts
-              value: "mongo-0.mongo,mongo-1.mongo"
+              value: "mongo-0.mongodb-service,mongo-1.mongodb-service,mongo-2.mongodb-service"
           ports:
             - containerPort: 3000
