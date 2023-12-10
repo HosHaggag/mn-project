@@ -3,13 +3,14 @@ kind: Deployment
 metadata:
   name: mynodejs-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: mynodejs
+      name: mynodejs-deployment
   template:
     metadata:
-      name: mynodejs-pod
+      name: mynodejs-deployment
       labels:
         app: mynodejs
     spec:
@@ -22,6 +23,6 @@ spec:
             - name: DBpass
               value: "demopwd"
             - name: DBhosts
-              value: "mongod-0.mongodb-service,mongod-1.mongodb-service,mongod-2.mongodb-service"
+              value: "mongod-0.mongodb-service,mongod-1.mongodb-service"
           ports:ss
             - containerPort: 3000
