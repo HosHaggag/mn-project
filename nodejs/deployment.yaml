@@ -22,6 +22,6 @@ spec:
             - name: DBpass
               value: "demopwd"
             - name: DBhosts
-              value: "mongo-0.mongodb-service,mongo-1.mongodb-service,mongo-2.mongodb-service"
-          ports:
+              value: "mongod-0.mongodb-service,mongod-1.mongodb-service,mongod-2.mongodb-service"
+          ports:ss
             - containerPort: 3000
