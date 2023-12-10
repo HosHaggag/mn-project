@@ -1,0 +1,23 @@
+
+
+imageName: node
+imageTag: latest
+command: 
+   - "node"
+   - "app.js"
+
+# Ports
+
+containerPort: 3000
+
+
+# env
+
+
+env:
+  - name: DBuser
+    value: admin
+  - name: DBpass
+    value: password
+  - name: DBhosts
+    value: mongod-0.mongodb-service,mongod-1.mongodb-service

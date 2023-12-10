@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs
+  app: mynodejs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mynodejs
+  template:
+    metadata:
+      labels:
+        app: mynodejs
+    spec:
+      containers:
+      - name: nodejs
+        image: haggagdev/mn-node:1.0.1
+        ports:
+        - containerPort: 3000
+        env:
+        {{- range .Values.env }}
+          - name: {{ .name }}
+            value: {{ .value }}
+        {{- end }}
+
+        
