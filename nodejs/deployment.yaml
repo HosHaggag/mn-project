@@ -1,28 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mynodejs-deployment
+  name: nodejs
+  app: mynodejs
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mynodejs
-      name: mynodejs-deployment
+      app: nodejs
   template:
     metadata:
-      name: mynodejs-deployment
       labels:
-        app: mynodejs
+        app: nodejs
     spec:
       containers:
-        - name: mynodejs-container
-          image: haggagdev/mn-node:1.0.0
-          env:
-            - name: DBuser
-              value: "demoadmin"
-            - name: DBpass
-              value: "demopwd"
-            - name: DBhosts
-              value: "mongod-0.mongodb-service,mongod-1.mongodb-service"
-          ports:ss
-            - containerPort: 3000
+      - name: nodejs
+        image: haggagdev/mn-node:1.0.0
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DBuser
+          value: demoadmin
+        - name: DBpass
+          value: demopwd
+        - name: DBhosts
+          value: mongod-0.mongodb-service,mongod-1.mongodb-service          
