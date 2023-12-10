@@ -1,4 +1,0 @@
-FROM cvallance/mongo-k8s-sidecar:latest
-
-# Start NPM
-CMD ["npm", "start"]
