@@ -15,13 +15,15 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: haggagdev/mn-node:1.0.0
+        image: haggagdev/mn-node:1.0.1
         ports:
         - containerPort: 3000
         env:
         - name: DBuser
-          value: demoadmin
+          value: admin
         - name: DBpass
-          value: demopwd
+          value: password
         - name: DBhosts
           value: mongod-0.mongodb-service,mongod-1.mongodb-service          
+
+        
