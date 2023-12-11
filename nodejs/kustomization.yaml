@@ -3,5 +3,5 @@ resources:
 images:
   - name: haggagdev/mn-node
     newName: haggagdev/mn-node
-    newTag: 1.0.0
+    newTag: 1.0.2
 
