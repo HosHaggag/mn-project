@@ -7,10 +7,10 @@ resources:
  - statefulset.yaml
 images:
   - name: mongo
-    newName: mongo
-    newTag: 7.0.4 
+    newName: haggagdev/mn-mongo
+    newTag: latest
 
-    
+
 # patches:
 #   - target:
 #       kind: StatefulSet
