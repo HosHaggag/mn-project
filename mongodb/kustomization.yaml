@@ -8,7 +8,7 @@ resources:
 images:
   - name: mongo
     newName: mongo
-    newTag: latest
+    newTag: 7.0.4
 
 
 # patches:
