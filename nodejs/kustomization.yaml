@@ -1,7 +1,7 @@
 resources:
  - deployment.yaml
 images:
-  - name: haggagdev/mn-node:1.0.1
+  - name: haggagdev/mn-node
     newName: haggagdev/mn-node
     newTag: 1.0.0
 
