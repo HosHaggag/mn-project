@@ -22,7 +22,6 @@ spec:
         envFrom:
           - configMapRef:
               name: nodejs-configmap 
-              key: env
         
 
         

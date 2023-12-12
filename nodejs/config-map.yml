@@ -5,8 +5,7 @@ metadata:
   nameSpace: default
 data:
   # Configuration values can be set as key-value properties
-  env: 
-    DBuser: admin
-    DBpass: password
-    DBhosts: mongod-0.mongodb-service,mongod-1.mongodb-service 
+  DBuser: admin
+  DBpass: password
+  DBhosts: mongod-0.mongodb-service,mongod-1.mongodb-service 
   
