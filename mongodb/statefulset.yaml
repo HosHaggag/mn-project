@@ -33,10 +33,11 @@ spec:
         - name: mongod-container
           image: mongo:7.0
           command:
-           valueFrom:
-             configMapKeyRef:
-               name: mongodb-configmap
-               key: command
+            - "mongod"
+            - "--bind_ip"
+            - "0.0.0.0"
+            - "--replSet"
+            - "MainRepSet"
           resources:
             requests:
               cpu: 0.2
