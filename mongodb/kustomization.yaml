@@ -34,8 +34,7 @@ replacements:
   - source:
       kind: ConfigMap
       name: mongodb-configmap
-      fieldRef:
-        fieldPath: data.imageName
+      fieldPath: data.imageName
     target:
       kind: StatefulSet
       name: mongod
@@ -47,8 +46,7 @@ replacements:
   - source:
       kind: ConfigMap
       name: mongodb-configmap
-      fieldRef:
-        fieldPath: data.imageTag
+      fieldPath: data.imageTag
     target:
       kind: StatefulSet
       name: mongod
