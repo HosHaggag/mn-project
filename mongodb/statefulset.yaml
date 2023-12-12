@@ -29,16 +29,14 @@ spec:
         environment: test
         replicaset: MainRepSet
     spec:
-      terminationGracePeriodSeconds: 10
       containers:
         - name: mongod-container
           image: mongo:7.0
           command:
-            - "mongod"
-            - "--bind_ip"
-            - "0.0.0.0"
-            - "--replSet"
-            - "MainRepSet"
+           valueFrom:
+             configMapKeyRef:
+               name: mongodb-configmap
+               key: command
           resources:
             requests:
               cpu: 0.2

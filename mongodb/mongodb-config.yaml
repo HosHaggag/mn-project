@@ -3,5 +3,9 @@ kind: ConfigMap
 metadata:
   name: mongodb-configmap
 data:
-  imageName: mongo
-  imageTag: 7.0
+  command:
+      - "mongod"
+      - "--bind_ip"
+      - "0.0.0.0"
+      - "--replSet"
+      - "MainRepSet"
