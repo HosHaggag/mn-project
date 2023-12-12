@@ -8,5 +8,6 @@ data:
   DBuser: admin
   DBpass: password
   yasser: hamada
+  hossam: yasser
   DBhosts: mongod-0.mongodb-service,mongod-1.mongodb-service
   
