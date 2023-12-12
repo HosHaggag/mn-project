@@ -3,9 +3,7 @@ kind: ConfigMap
 metadata:
   name: mongodb-configmap
 data:
-  command:
-      - "mongod"
-      - "--bind_ip"
-      - "0.0.0.0"
-      - "--replSet"
-      - "MainRepSet"
+  env: |
+    DBuser: admin
+    DBpass: password
+    DBhosts: mongod-0.mongodb-service,mongod-1.mongodb-service
