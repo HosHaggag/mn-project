@@ -4,4 +4,4 @@ metadata:
   name: mongodb-configmap
 data:
   imageName: mongo
-  imageTag: 7.0.4
+  imageTag: 7.0
