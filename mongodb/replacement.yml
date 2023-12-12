@@ -8,3 +8,7 @@ targets:
       name: mongod
   fieldPaths: 
   - spec.template.spec.containers[0].image
+  options:
+     delimiter: ":"
+     index: 0
+     create: true
