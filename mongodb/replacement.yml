@@ -3,7 +3,8 @@ source:
       name: mongodb-configmap
       fieldPath: data.imageName
 targets:
-      - select:
-          kind: StatefulSet
-      fieldPaths: 
-       - spec.template.spec.containers[0].image
+- select:
+      kind: StatefulSet
+      name: mongod
+  fieldPaths: 
+  - spec.template.spec.containers[0].image
