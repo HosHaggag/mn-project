@@ -7,7 +7,7 @@ targets:
       kind: StatefulSet
       name: mongod
   fieldPaths: 
-  - spec.template.spec.containers[0].image
+  - spec.template.spec.containers.[name=mongod-container].image
   options:
      delimiter: ":"
      index: 0
