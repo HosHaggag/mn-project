@@ -4,6 +4,6 @@ source:
       fieldPath: data.imageName
 targets:
       - select:
-        kind: StatefulSet
+          kind: StatefulSet
       fieldPaths: 
        - spec.template.spec.containers[0].image
