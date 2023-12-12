@@ -3,7 +3,7 @@ kind: Kustomization
 metadata:
   name: mongodb-kustomize
 replacements:
-  - path: replacement.yml
+- path: replacement.yml
   
       # options:
       #   delimiter: ":"
