@@ -35,10 +35,11 @@ replacements:
       kind: ConfigMap
       name: mongodb-configmap
       fieldPath: data.imageName
-    target:
-      kind: StatefulSet
-      name: mongod
-      path: spec.template.spec.containers[0].image
+    targets:
+    - select:
+        kind: StatefulSet
+        name: mongod
+      fieldPath: spec.template.spec.containers[0].image
       options:
         delimiter: ":"
         index: 0
@@ -47,14 +48,15 @@ replacements:
       kind: ConfigMap
       name: mongodb-configmap
       fieldPath: data.imageTag
-    target:
-      kind: StatefulSet
-      name: mongod
-      path: spec.template.spec.containers[0].image
+    targets:
+    - select:
+        kind: StatefulSet
+        name: mongod
+      fieldPath: spec.template.spec.containers[0].image
       options:
         delimiter: ":"
         index: 1
-        create: true     
+        create: true    
 # patches:
 #   - target:
 #       kind: StatefulSet
