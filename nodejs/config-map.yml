@@ -6,6 +6,6 @@ metadata:
 data:
   # Configuration values can be set as key-value properties
   DBuser: admin
-  DBpass: passwordd
-  DBhosts: mongod-0.mongodb-service,mongod-1.mongodb-service 
+  DBpass: password
+  DBhosts: mongod-0.mongodb-servic,mongod-1.mongodb-servic 
   
