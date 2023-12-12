@@ -31,6 +31,7 @@ kind: Kustomization
 metadata:
   name: mongodb-kustomize
 replacements:
+  - path: statefulset.yaml
   - source:
       kind: ConfigMap
       name: mongodb-configmap
@@ -41,24 +42,24 @@ replacements:
         name: mongod
       fieldPaths: 
        - spec.template.spec.containers[0].image
-      options:
-        delimiter: ":"
-        index: 0
-        create: true
-  - source:
-      kind: ConfigMap
-      name: mongodb-configmap
-      fieldPath: data.imageTag
-    targets:
-    - select:
-        kind: StatefulSet
-        name: mongod
-      fieldPaths: 
-       - spec.template.spec.containers[0].image
-      options:
-        delimiter: ":"
-        index: 1
-        create: true    
+      # options:
+      #   delimiter: ":"
+      #   index: 0
+      #   create: true
+  # - source:
+  #     kind: ConfigMap
+  #     name: mongodb-configmap
+  #     fieldPath: data.imageTag
+  #   targets:
+  #   - select:
+  #       kind: StatefulSet
+  #       name: mongod
+  #     fieldPaths: 
+  #      - spec.template.spec.containers[0].image
+  #     options:
+  #       delimiter: ":"
+  #       index: 1
+  #       create: true    
 # patches:
 #   - target:
 #       kind: StatefulSet
