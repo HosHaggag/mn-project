@@ -31,17 +31,8 @@ kind: Kustomization
 metadata:
   name: mongodb-kustomize
 replacements:
-  - path: statefulset.yaml
-  - source:
-      kind: ConfigMap
-      name: mongodb-configmap
-      fieldPath: data.imageName
-    targets:
-    - select:
-        kind: StatefulSet
-        name: mongod
-      fieldPaths: 
-       - spec.template.spec.containers[0].image
+  - path: replacement.yml
+  
       # options:
       #   delimiter: ":"
       #   index: 0
