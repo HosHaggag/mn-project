@@ -6,7 +6,7 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "nodejs-configmap"
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: mynodejs
