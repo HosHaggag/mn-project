@@ -1,22 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nodejs
+  name: simple-node-app
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: test-argo-notifications
+    notifications.argoproj.io/subscribe.on-sync-failed.slack: test-argo-notifications
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.slack: test-argo-notifications
+    notifications.argoproj.io/subscribe.on-created.slack: test-argo-notifications
+    notifications.argoproj.io/subscribe.on-deleted.slack: test-argo-notifications
+    notifications.argoproj.io/subscribe.on-deployed.slack: test-argo-notifications
+    notifications.argoproj.io/subscribe.on-health-degraded.slack: test-argo-notifications
 spec:
   destination:
     name: ''
-    namespace: default
     server: 'https://kubernetes.default.svc'
   source:
     path: nodejs
-    repoURL: 'https://gitlab.com/axisapp/mn-project.git'
+    repoURL: 'https://github.com/HosHaggag/mn-project.git'
     targetRevision: HEAD
   sources: []
   project: default
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      - Replace=true
+      - ApplyOutOfSyncOnly=true
